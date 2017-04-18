@@ -25,12 +25,14 @@ var renderData = function(data, input) {
 	// $('.results').html(data.items[0].snippet.thumbnails.default.url);
 	
 	var items = data.items.map(function(item) {
-		return 	`
-			<img src ="${item.snippet.thumbnails.default.url}">
-		`
-//add title, 
+		return 	`<a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank"><img src ="${item.snippet.thumbnails.default.url}"></a>`
 	});
-	$('.results').html(`
-		${items.join("")}
-	`)
+
+	$('.results').html(items);
+	// $('.results').html(`
+	// 	${items.join("")}
+	// `)
+	
+	//   + <a href="blank"
 }
+
